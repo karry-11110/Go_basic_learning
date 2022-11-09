@@ -1,0 +1,7 @@
+{{template "base.tmpl" .}}
+<head>
+    <title>模板继承</title>
+<head>
+{{define "content"}}
+    <div>Hello world!{{ . }}</div>
+{{end}}

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+</head>
+<body>
+    {{with .u1}}{{/**相当于定义了一块局部作用域**/}}
+    <p>Hello {{ .Name }}</p>
+    <p>性别：{{ .Gender }}</p>
+    <p>年龄：{{ .Age }}</p>
+    {{end}}
+    <hr>
+    {{$v1:=100}}{{/**模板中声明变量，用来保存传入模板的数据或其他语句生成的结果**/}}
+    <hr>
+    {{if $v1}}
+    <p>有点东西</p>
+    {{else}}
+    啥都没有
+    {{end}}
+
+    <hr>
+    {{range $index,$hobby := .l1}}
+        <p>{{$index}}--{{$hobby}}</p>
+    {{end}}
+
+    {{index .l1 1}}
+
+    <hr>
+
+</body>
+</html>
